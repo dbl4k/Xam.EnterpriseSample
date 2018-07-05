@@ -18,7 +18,6 @@ namespace Xam.EnterpriseSample
 		public MainPage()
 		{
 			InitializeComponent();
-
             BindingContext = new SimpleViewModel();
 		}
 
