@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xam.EnterpriseSample.Android", "Xam.EnterpriseSample\Xam.EnterpriseSample.Android\Xam.EnterpriseSample.Android.csproj", "{18868C9A-0B2C-4AD5-A4D9-48695AECA408}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Xam.EnterpriseSample", "Xam.EnterpriseSample\Xam.EnterpriseSample\Xam.EnterpriseSample.shproj", "{1C71D959-2EAC-42F6-9451-8B8408DDCC7D}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Xam.EnterpriseSample\Xam.EnterpriseSample\Xam.EnterpriseSample.projitems*{18868c9a-0b2c-4ad5-a4d9-48695aeca408}*SharedItemsImports = 4
+		Xam.EnterpriseSample\Xam.EnterpriseSample\Xam.EnterpriseSample.projitems*{1c71d959-2eac-42f6-9451-8b8408ddcc7d}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{18868C9A-0B2C-4AD5-A4D9-48695AECA408}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18868C9A-0B2C-4AD5-A4D9-48695AECA408}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18868C9A-0B2C-4AD5-A4D9-48695AECA408}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{18868C9A-0B2C-4AD5-A4D9-48695AECA408}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18868C9A-0B2C-4AD5-A4D9-48695AECA408}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18868C9A-0B2C-4AD5-A4D9-48695AECA408}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {262BC0BA-53DF-4EAE-BC25-5BB3F0FD74BF}
+	EndGlobalSection
+EndGlobal
