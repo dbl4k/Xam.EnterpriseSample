@@ -4,11 +4,27 @@
              xmlns:local="clr-namespace:Xam.EnterpriseSample"
              x:Class="Xam.EnterpriseSample.MainPage">
 
-    <StackLayout>
+    <StackLayout Margin="10">
         <!-- Place new controls here -->
-    	<Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+        <Label Text="Id" 
+           HorizontalOptions="Fill" />
+        <Entry Text="{Binding Id, Mode=TwoWay}" 
+           HorizontalOptions="Fill" />
+
+        <Label Text="Title" 
+           HorizontalOptions="Fill" />
+        <Entry Text="{Binding Title, Mode=TwoWay}" 
+           HorizontalOptions="Fill" />
+
+        <Label Text="Description" 
+           HorizontalOptions="Fill" />
+        <Editor Text="{Binding Description, Mode=TwoWay}" 
+           HorizontalOptions="Fill"
+           HeightRequest="100" />
+        
+        <Button Text="Click me!" 
+           Clicked="Button_OnClick"
+           HorizontalOptions="Fill" />
     </StackLayout>
 
 </ContentPage>
