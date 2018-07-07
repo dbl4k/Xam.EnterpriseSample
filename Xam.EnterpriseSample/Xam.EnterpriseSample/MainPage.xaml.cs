@@ -7,14 +7,16 @@ using System.Threading.Tasks;
 using Xam.EnterpriseSample.ViewModels;
 using Xamarin.Forms;
 using Newtonsoft.Json;
+using Xam.EnterpriseSample.Services;
 
 namespace Xam.EnterpriseSample
 {
 	public partial class MainPage : ContentPage
 	{
-        private Random _random = new Random();
-        public HttpClient client = new HttpClient();
+        private const string postsurl = "http://jsonplaceholder.typicode.com/posts/";
 
+        private Random _random = new Random();
+      
 		public MainPage()
 		{
 			InitializeComponent();
@@ -27,19 +29,33 @@ namespace Xam.EnterpriseSample
             {
                 return (SimpleViewModel)BindingContext;
             }
-            
         }
 
         public async void Button_OnClick(object sender, EventArgs args)
         {
             var id = _random.Next(1, 10);
-            var response = await client.GetAsync("http://jsonplaceholder.typicode.com/posts/" + id.ToString());
-            var body = await response.Content.ReadAsStringAsync();
-            var post = JsonConvert.DeserializeObject<DataContracts.TypicodePost>(body);
-            
+            var post = await GetPost(id);
+
             Model.Id = post.Id;
             Model.Title = post.Title;
             Model.Description = post.Body;
         }
+
+        private async Task<DataContracts.TypicodePost> GetPost(int id)
+        {
+            string body;
+            try
+            {
+                var response = await HttpService.Client.GetAsync(postsurl + id.ToString());
+                body = await response.Content.ReadAsStringAsync();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+           
+            return JsonConvert.DeserializeObject<DataContracts.TypicodePost>(body);
+        }
+
 	}
 }
