@@ -2,10 +2,28 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Xam.EnterpriseSample"
+             xmlns:converters="clr-namespace:Xam.EnterpriseSample.ValueConverters"
+             xmlns:extensions="clr-namespace:Xam.EnterpriseSample.Extensions"
              x:Class="Xam.EnterpriseSample.MainPage">
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:InvertValueConverter x:Key="InvertValueConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
     <StackLayout Margin="10">
         <!-- Place new controls here -->
+
+            <!-- this method doesn't seem to work -->
+            <!--<Image Source="{extensions:ImageResource Xam.EnterpriseSample.Images.dbl4k_cog_512.png}"
+           HorizontalOptions="Fill" 
+           HeightRequest="512" />-->
+
+        <Image Source="dbl4k_cog_512.png"
+           HorizontalOptions="Fill" />
+
         <Label Text="Id" 
            HorizontalOptions="Fill" />
         <Entry Text="{Binding Id, Mode=TwoWay}" 
@@ -24,7 +42,14 @@
         
         <Button Text="Click me!" 
            Clicked="Button_OnClick"
+           IsEnabled="{Binding ProgressIndicatorVisible, Converter={StaticResource InvertValueConverter}}"
            HorizontalOptions="Fill" />
+        
+        <Label Text="Loading..." 
+           IsVisible="{Binding ProgressIndicatorVisible}"
+           HorizontalOptions="Fill" />
+        
     </StackLayout>
+    </ScrollView>
 
 </ContentPage>

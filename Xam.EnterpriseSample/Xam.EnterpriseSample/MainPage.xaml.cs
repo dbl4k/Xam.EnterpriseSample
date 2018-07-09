@@ -33,12 +33,16 @@ namespace Xam.EnterpriseSample
 
         public async void Button_OnClick(object sender, EventArgs args)
         {
+            Model.ProgressIndicatorVisible = true;
+
             var id = _random.Next(1, 10);
             var post = await GetPost(id);
 
             Model.Id = post.Id;
             Model.Title = post.Title;
             Model.Description = post.Body;
+
+            Model.ProgressIndicatorVisible = false;
         }
 
         private async Task<DataContracts.TypicodePost> GetPost(int id)

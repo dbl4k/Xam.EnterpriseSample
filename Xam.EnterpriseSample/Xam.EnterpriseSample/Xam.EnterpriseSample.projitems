@@ -16,11 +16,16 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ImageResourceExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ValueConverters\InvertValueConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataContracts\TypicodePost.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Services\HttpService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SimpleViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\dbl4k_cog_512.png" />
   </ItemGroup>
 </Project>

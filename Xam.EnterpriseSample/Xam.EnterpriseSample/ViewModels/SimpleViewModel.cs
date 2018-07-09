@@ -53,6 +53,21 @@ namespace Xam.EnterpriseSample.ViewModels
             }
         }
 
+        private bool _progressIndicatorVisible;
+
+        public bool ProgressIndicatorVisible
+        {
+            get
+            {
+                return _progressIndicatorVisible;
+            }
+            set
+            {
+                _progressIndicatorVisible = value;
+                RaisePropertyChanged();
+            }
+        }
+
         #region "INotifyPropertyChanged"
 
         public event PropertyChangedEventHandler PropertyChanged;
